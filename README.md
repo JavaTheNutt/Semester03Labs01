@@ -1,0 +1,1 @@
+This is the git repo form my Semester 3 Data Structures. This is the repo for the first set of labs.
