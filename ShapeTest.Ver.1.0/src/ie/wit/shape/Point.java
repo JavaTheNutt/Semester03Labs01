@@ -3,13 +3,15 @@ import javax.swing.JOptionPane;
 
 public class Point extends Shape 
 {
+	
 	protected int x, y;
 	
+	//default constructor
 	public Point() {
-		// TODO Auto-generated constructor stub
 		setPoint(0,0);
 	}
 	
+	//second constructor
 	public Point(int x, int y) {
 		setPoint(x,y);
 	}
@@ -37,15 +39,19 @@ public class Point extends Shape
 	@Override
 	public String getName() 
 	{
-		// TODO Auto-generated method stub
 		return "Point";
 	}
 
+	//This method will display a dialog.
 	@Override
 	public void Draw() 
 	{
-		// TODO Auto-generated method stub
-		JOptionPane.showMessageDialog(null, getName() + ": " + this);
+		/*This calls the showMessageDialog() method on the static JOptionPane 
+		 * object. It passes two parameters, an object and a string. The object is 
+		 * set to null to allow the pane free movement. The string is a concatenation of 
+		 * the getName() method with the this keyword, which will call the toString() 
+		 * method on this object.*/
+		JOptionPane.showMessageDialog(null, getName() + ": " + this);	//Output: Point: (...)
 
 	}
 

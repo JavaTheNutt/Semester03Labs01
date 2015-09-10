@@ -10,10 +10,16 @@ public class Circle extends Point
 	}
 	
 	public Circle(double r, int x, int y){
+		//pass to constructor in superclass
 		super(x,y);
+		
 		setRadius(r);
 	}
 	public void setRadius(double r){
+		/*This expression acts like an if statement. The left side of the 
+		 * expression is checking if the variable r is greater than or equal
+		 *  to 0.0(not negative).If true, the value will be saved to the 
+		 *  radius attribute. If the value is negative, the radius is set to 0*/
 		radius = (r >=0.0 ? r : 0.0);
 	}
 	

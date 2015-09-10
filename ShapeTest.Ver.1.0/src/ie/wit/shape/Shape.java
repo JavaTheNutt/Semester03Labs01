@@ -15,6 +15,7 @@ public abstract class Shape
 		return 0.0;
 	}
 	
+	/*These two methods will be initialised in the sub-class*/
 	public abstract String getName();
 	
 	public abstract void Draw();
