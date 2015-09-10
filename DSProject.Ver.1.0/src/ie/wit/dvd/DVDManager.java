@@ -5,6 +5,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
+
 public class DVDManager 
 {
 	private static Icon myIcon = new ImageIcon("..\\DSProject.Ver.1.0\\images\\logosmall.gif");
@@ -64,6 +66,9 @@ public class DVDManager
 	public void menuAddDvd()
 	{
 	int option;
+	
+	int tempId;
+	String tempTitle;
 	String msgID = new String("DVD ID :");
 	String msgName = new String("DVD Name :");
 	String msgPrice = new String("DVD Price :");
@@ -86,17 +91,20 @@ public class DVDManager
 
 	    if(response == JOptionPane.CANCEL_OPTION)
 	    ;
-	    else
-	    {
-	    try {
-
-	    option = Integer.parseInt(price.getText());
-	}
-	catch (Exception e)
-	{
-	JOptionPane.showMessageDialog(null,"Data Input Error" + e + "\nPlease Try Again");
-	}
-	}
+	    else{
+	    	try {
+	    		option = Integer.parseInt(price.getText());
+	    		tempId = Integer.parseInt(id.getText());
+	    		tempTitle = name.getText();
+	    		Dvd tempDvd = new Dvd(tempId, tempTitle, option);
+	    		DeviceList[currentSize] = tempDvd;
+	    		
+	    	}
+	    	catch (Exception e)
+	    	{
+	    		JOptionPane.showMessageDialog(null,"Data Input Error" + e + "\nPlease Try Again");
+	    	}
+	    }
 	}
 
 
@@ -117,9 +125,7 @@ public class DVDManager
 			} else {
 				System.out.println("404, dvd not found");
 			}
-			
 		}
-
 	}
 	//////////////////////////////////////////////////////////////////////////////////////
 	public void menuListDvds()
