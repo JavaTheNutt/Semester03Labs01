@@ -106,12 +106,18 @@ public class DVDManager
 		
 		int idSelected;
 		int tempId;
+		
 		System.out.println("Please enter the id of the dvd to be played");
 		idSelected = EasyScanner.nextInt();
-		System.out.println(idSelected);
-		for(int i = 0; i < DeviceList.length; i++){
+
+		for(int i = 0; i < currentSize; i++){
 			tempId = DeviceList[i].getId();
-			System.out.println(tempId);
+			if(tempId == idSelected){
+				System.out.println(DeviceList[i].play());
+			} else {
+				System.out.println("404, dvd not found");
+			}
+			
 		}
 	    /*
 	    Insert the necessary code here to ask the user for a DVD Id 
