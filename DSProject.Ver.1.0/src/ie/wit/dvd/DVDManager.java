@@ -119,24 +119,14 @@ public class DVDManager
 			}
 			
 		}
-	    /*
-	    Insert the necessary code here to ask the user for a DVD Id 
-	    look it up in the DeviceList Array, and 'play' it
-
-	    The play() method is an extra method in the Dvd class that needs
-	    to be written, which just displays a simple message to the User
-
-	    "This is a Clip of XYZ video playing" where XYZ is the title of the
-	    Dvd
-	    */
 
 	}
 	//////////////////////////////////////////////////////////////////////////////////////
 	public void menuListDvds()
 	{
-	    /*
-	    Insert the necessary code here to display the DeviceList 
-	    array to the User
-	    */
+		for(int i = 0; i < currentSize; i++){
+			System.out.println(DeviceList[i].toString() + "\n\n");
+		}
+		
 	}
 }
