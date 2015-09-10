@@ -43,7 +43,7 @@ public class Dvd
 		this.price = price;
 	}
 
-	@Override
+
 	public String toString() 
 	{
 		return "Dvd \nid=" + id + "\ntitle=" + title + "\nprice=" + price;

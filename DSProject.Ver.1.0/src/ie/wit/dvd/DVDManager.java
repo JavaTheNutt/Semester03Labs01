@@ -104,7 +104,15 @@ public class DVDManager
 	public void menuPlayDvd()
 	{
 		
-		
+		int idSelected;
+		int tempId;
+		System.out.println("Please enter the id of the dvd to be played");
+		idSelected = EasyScanner.nextInt();
+		System.out.println(idSelected);
+		for(int i = 0; i < DeviceList.length; i++){
+			tempId = DeviceList[i].getId();
+			System.out.println(tempId);
+		}
 	    /*
 	    Insert the necessary code here to ask the user for a DVD Id 
 	    look it up in the DeviceList Array, and 'play' it
