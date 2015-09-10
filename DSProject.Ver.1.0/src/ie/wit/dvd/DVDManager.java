@@ -98,6 +98,7 @@ public class DVDManager
 	    		tempTitle = name.getText();
 	    		Dvd tempDvd = new Dvd(tempId, tempTitle, option);
 	    		DeviceList[currentSize] = tempDvd;
+	    		currentSize++;
 	    		
 	    	}
 	    	catch (Exception e)
