@@ -1,5 +1,6 @@
 package ie.wit.dvd;
 
+/*This class will be used to collect user input*/
 import java.util.*;
 public class EasyScanner 
 {
