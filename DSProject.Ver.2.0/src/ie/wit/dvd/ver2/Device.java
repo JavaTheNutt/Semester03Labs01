@@ -13,4 +13,11 @@ public abstract class Device
 	}
 	
 	
+	public abstract void play();
+	public abstract String decoder();
+	
+	
+	public String toString(){
+		return "\nId:\t" + id + "\nTitle:\t" + title + "\nPrice:\t" + price;
+	}
 }

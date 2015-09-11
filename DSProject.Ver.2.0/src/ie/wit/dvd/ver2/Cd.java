@@ -8,5 +8,14 @@ public class Cd extends Device {
 		super(id, title, price);
 		this.artist = artist;
 	}
+	public String decoder(){
+		return "mp3";
+	}
+	public void play(){
+
+	}
+	public String toString(){
+		return super.toString() + "\nArtist:\t" + artist;
+	}
 
 }
