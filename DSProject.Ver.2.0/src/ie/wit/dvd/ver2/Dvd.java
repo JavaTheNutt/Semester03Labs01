@@ -20,6 +20,12 @@ public class Dvd extends Device
 		return "avi";
 	}
 	
+	public String getRegion(){
+		return region;
+	}
+	public void setRegion(String region){
+		this.region = region;
+	}
 	@Override
 	public String toString(){
 		return super.toString() + "\nRegion:\t" + region;

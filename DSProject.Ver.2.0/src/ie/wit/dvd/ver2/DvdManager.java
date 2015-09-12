@@ -11,12 +11,12 @@ public class DvdManager
 	private static Icon anIcon = new ImageIcon();
 	private static int currentSize = 0, maxSize = 5;
 
-	private Dvd[] DeviceList = new Dvd[maxSize];
+	private Device[] DeviceList = new Device[maxSize];
 
 	///////////////////////////////////////////////////////////////////
 	public DvdManager()
 	{
-	Dvd aDVD = new Dvd(101,"Batman",9.99);
+	Dvd aDVD = new Dvd(101,"Batman",9.99, "Usa");
 	DeviceList[currentSize] = aDVD;
 	currentSize++;
 	}
@@ -26,9 +26,9 @@ public class DvdManager
 	{
 	int option = 0;
 
-	String opt1 = new String("1. Add a DVD :");
-	String opt2 = new String("2. Play a DVD :");
-	String opt3 = new String("3. List All DVDs :");
+	String opt1 = new String("1. Add a Device :");
+	String opt2 = new String("2. Play a Device :");
+	String opt3 = new String("3. List All Devices :");
 	String opt4 = new String("4. Exit :");
 	String msg = new String("Enter Option:");
 	JTextField opt = new JTextField("");
@@ -61,20 +61,23 @@ public class DvdManager
 	    return option;
 	 } 
 	///////////////////////////////////////////////////////////////
-	public void menuAddDvd()
+	public void menuAddDevice()
 	{
 	int option;
 	
 	int tempId;
 	String tempTitle;
+	String tempRegion;
 	String msgID = new String("DVD ID :");
 	String msgName = new String("DVD Name :");
 	String msgPrice = new String("DVD Price :");
+	String msgRegion = new String("Region :");
 	JTextField id = new JTextField("");
 	JTextField name = new JTextField("");
 	JTextField price = new JTextField("");
+	JTextField region = new JTextField("");
 
-	Object message[] = new Object[7];
+	Object message[] = new Object[9];
 
 	message[0] = myIcon;
 	message[1] = msgID;
@@ -83,6 +86,8 @@ public class DvdManager
 	message[4] = name;
 	message[5] = msgPrice;
 	message[6] = price;
+	message[7] = msgRegion;
+	message[8] = region;
 
 	int response = JOptionPane.showConfirmDialog(null,message,"DVD Data Entry",JOptionPane.OK_CANCEL_OPTION,
 	JOptionPane.QUESTION_MESSAGE ,anIcon);
@@ -94,7 +99,8 @@ public class DvdManager
 	    		option = Integer.parseInt(price.getText());
 	    		tempId = Integer.parseInt(id.getText());
 	    		tempTitle = name.getText();
-	    		Dvd tempDvd = new Dvd(tempId, tempTitle, option);
+	    		tempRegion = region.getText();
+	    		Dvd tempDvd = new Dvd(tempId, tempTitle, option, tempRegion);
 	    		DeviceList[currentSize] = tempDvd;
 	    		currentSize++;
 	    		
@@ -108,7 +114,7 @@ public class DvdManager
 
 
 	//////////////////////////////////////////////////////////////////
-	public void menuPlayDvd()
+	public void menuPlayDevice()
 	{
 		
 		int idSelected;
@@ -120,14 +126,14 @@ public class DvdManager
 		for(int i = 0; i < currentSize; i++){
 			tempId = DeviceList[i].getId();
 			if(tempId == idSelected){
-				System.out.println(DeviceList[i].play());
+				DeviceList[i].play();
 			} else {
-				System.out.println("404, dvd not found");
+				System.out.println("404, device not found");
 			}
 		}
 	}
 	//////////////////////////////////////////////////////////////////////////////////////
-	public void menuListDvds()
+	public void menuListDevices()
 	{
 		for(int i = 0; i < currentSize; i++){
 			System.out.println(DeviceList[i].toString() + "\n\n");
