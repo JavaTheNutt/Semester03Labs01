@@ -13,14 +13,12 @@ public class DvdManager
 
 	private Device[] DeviceList = new Device[maxSize];
 
-	///////////////////////////////////////////////////////////////////
 	public DvdManager()
 	{
 	Dvd aDVD = new Dvd(101,"Batman",9.99, "Usa");
 	DeviceList[currentSize] = aDVD;
 	currentSize++;
 	}
-	////////////////////////////////////////////////////////////////// 
 
 	public int menuMain()
 	{
@@ -60,7 +58,6 @@ public class DvdManager
 	    }
 	    return option;
 	 } 
-	///////////////////////////////////////////////////////////////
 	public void menuAddDevice()
 	{
 	int option;
@@ -92,8 +89,7 @@ public class DvdManager
 	int response = JOptionPane.showConfirmDialog(null,message,"DVD Data Entry",JOptionPane.OK_CANCEL_OPTION,
 	JOptionPane.QUESTION_MESSAGE ,anIcon);
 
-	    if(response == JOptionPane.CANCEL_OPTION)
-	    ;
+	    if(response == JOptionPane.CANCEL_OPTION);
 	    else{
 	    	try {
 	    		option = Integer.parseInt(price.getText());
@@ -113,7 +109,6 @@ public class DvdManager
 	}
 
 
-	//////////////////////////////////////////////////////////////////
 	public void menuPlayDevice()
 	{
 		
@@ -132,7 +127,6 @@ public class DvdManager
 			}
 		}
 	}
-	//////////////////////////////////////////////////////////////////////////////////////
 	public void menuListDevices()
 	{
 		for(int i = 0; i < currentSize; i++){

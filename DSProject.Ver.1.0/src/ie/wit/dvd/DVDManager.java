@@ -15,14 +15,12 @@ public class DVDManager
 
 	private Dvd[] DeviceList = new Dvd[maxSize];
 
-	///////////////////////////////////////////////////////////////////
 	public DVDManager()
 	{
 	Dvd aDVD = new Dvd(101,"Batman",9.99);
 	DeviceList[currentSize] = aDVD;
 	currentSize++;
 	}
-	////////////////////////////////////////////////////////////////// 
 
 	public int menuMain()
 	{
@@ -62,7 +60,6 @@ public class DVDManager
 	    }
 	    return option;
 	 } 
-	///////////////////////////////////////////////////////////////
 	public void menuAddDvd()
 	{
 	int option;
@@ -108,8 +105,6 @@ public class DVDManager
 	    }
 	}
 
-
-	//////////////////////////////////////////////////////////////////
 	public void menuPlayDvd()
 	{
 		
@@ -128,7 +123,6 @@ public class DVDManager
 			}
 		}
 	}
-	//////////////////////////////////////////////////////////////////////////////////////
 	public void menuListDvds()
 	{
 		for(int i = 0; i < currentSize; i++){
