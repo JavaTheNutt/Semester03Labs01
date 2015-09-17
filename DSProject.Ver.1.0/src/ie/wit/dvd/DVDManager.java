@@ -66,6 +66,7 @@ public class DVDManager
 	
 	int tempId;
 	String tempTitle;
+	double tempPrice;
 	String msgID = new String("DVD ID :");
 	String msgName = new String("DVD Name :");
 	String msgPrice = new String("DVD Price :");
@@ -90,10 +91,10 @@ public class DVDManager
 	    ;
 	    else{
 	    	try {
-	    		option = Integer.parseInt(price.getText());
+	    		tempPrice = Double.parseDouble(price.getText());
 	    		tempId = Integer.parseInt(id.getText());
 	    		tempTitle = name.getText();
-	    		Dvd tempDvd = new Dvd(tempId, tempTitle, option);
+	    		Dvd tempDvd = new Dvd(tempId, tempTitle, tempPrice);
 	    		DeviceList[currentSize] = tempDvd;
 	    		currentSize++;
 	    		
@@ -125,9 +126,7 @@ public class DVDManager
 	}
 	public void menuListDvds()
 	{
-		for(int i = 0; i < currentSize; i++){
-			System.out.println(DeviceList[i].toString() + "\n\n");
-		}
-		
+			JOptionPane.showMessageDialog(null,DeviceList);
+
 	}
 }
